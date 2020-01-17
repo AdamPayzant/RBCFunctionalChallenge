@@ -20,30 +20,35 @@ const STUDENT_EMAIL = ''; // Set this value to your email
 
 getMemeList().then((memes) => {
   console.log(memes);
-  // submitFilterChallenge(memes);
+  submitFilterChallenge(memes);
   // submitMinChallenge(memes);
   // submitSumChallenge(memes);
 });
 
 function submitFilterChallenge(memes) {
   // Do some magic
-
+  const result = memes.filter((e)=> {
+    if(e["points"] > 60000) {
+      return(e);
+    }
+  });
   // Submit your answer
-
+  return result;
 }
 
 function submitMinChallenge(memes) {
   // Do some magic
-
+  
   // Submit your answer
-
 }
 
 function submitSumChallenge(memes) {
   // Do some magic
-
+  const result = memes.reduce((sum, cur)=>{
+    sum + cur;
+  });
   // Submit your answer
-
+  return(result);
 }
 
 
